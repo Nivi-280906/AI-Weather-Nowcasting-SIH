@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI-Driven Hyper-Local Early Warning System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot pulsing"></span>
+      <div>
+        <h1>Hyper-Local Severe Weather Nowcasting</h1>
+        <p>Thunderstorms &middot; Cloudbursts &middot; Flash Floods — SIH Prototype</p>
+      </div>
+    </div>
+    <div class="top-right">
+      <div class="status" id="conn-status">Connecting…</div>
+      <div class="bell-wrap">
+        <button class="bell-btn" id="bell-btn" title="Notifications">
+          🔔<span class="bell-badge" id="bell-badge" style="display:none">0</span>
+        </button>
+        <div class="bell-dropdown" id="bell-dropdown"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="map-panel">
+      <div id="map"></div>
+      <div class="legend">
+        <strong>Flash-flood risk</strong>
+        <div class="legend-row"><span class="swatch low"></span> Low</div>
+        <div class="legend-row"><span class="swatch watch"></span> Watch</div>
+        <div class="legend-row"><span class="swatch warning"></span> Warning</div>
+        <div class="legend-row"><span class="swatch severe"></span> Severe</div>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="card" id="station-detail">
+        <h2>Select a station</h2>
+        <p class="muted">Click a marker on the map to see its risk breakdown and predicted timing. Full model details are hidden by default — expand them if you need them.</p>
+      </div>
+
+      <div class="card">
+        <h2>Live Alert Feed</h2>
+        <div id="alert-feed" class="alert-feed"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="foot">
+    <span>Data sources: IMDAA reanalysis · INSAT-3D/3DR (MOSDAC) · Satellite QPE · CartoDEM/SRTM — simulated in this demo build, see README.</span>
+  </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.3/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
