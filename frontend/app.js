@@ -2,8 +2,8 @@
 const API_BASE = "";
 const WS_URL =
   location.protocol === "https:"
-    ? "wss://ai-weather-nowcasting-sih.onrender.com/ws/live"
-    : "ws://localhost:8000/ws/live";
+    ? `wss://${location.host}/ws/live`
+    : `ws://${location.host}/ws/live`;
 const map = L.map("map", { zoomControl: true }).setView([22.5, 79.0], 5);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors",
